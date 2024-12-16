@@ -1,0 +1,11 @@
+<div class="home-container">
+    <h1 class="text-center">Financial Instruments</h1>
+    <div class="categories-grid">
+      <div *ngFor="let category of categories" class="category-card">
+        <div class="icon">{{ category.icon }}</div>
+        <h2>{{ category.name }}</h2>
+        <a [routerLink]="category.route" class="details-link">View Details</a>
+      </div>
+    </div>
+  </div>
+  

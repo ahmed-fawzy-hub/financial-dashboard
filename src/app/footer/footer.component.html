@@ -1,0 +1,29 @@
+<footer class="footer">
+    <div class="footer-content">
+      <div class="social-media">
+        <h3>Follow Us</h3>
+        <ul>
+          <li *ngFor="let link of socialLinks">
+            <a [href]="link.url" target="_blank">{{ link.name }}</a>
+          </li>
+        </ul>
+      </div>
+  
+      <div class="contact-info">
+        <h3>Contact Us</h3>
+        <p>Email: <a href="mailto:contact@financialdashboard.com">contactfinancialdashboard.com</a></p>
+      </div>
+  
+      <div class="footer-links">
+        <ul>
+          <li><a routerLink="/privacy-policy">Privacy Policy</a></li>
+          <li><a routerLink="/terms-of-service">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>&copy; 2024 Financial Dashboard. All rights reserved.</p>
+    </div>
+  </footer>
+  

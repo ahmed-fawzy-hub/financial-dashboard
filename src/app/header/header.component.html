@@ -1,0 +1,22 @@
+<header class="header">
+    <nav class="navbar">
+      <div class="logo">
+        <a routerLink="/">Financial Dashboard</a>
+      </div>
+  
+      <!-- روابط التنقل -->
+      <ul class="nav-links" [class.active]="isMenuOpen">
+        <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+        <li><a routerLink="/instruments" routerLinkActive="active">Instruments</a></li>
+        <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+      </ul>
+  
+      <!-- زر القائمة (للجوال) -->
+      <div class="menu-toggle" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+  

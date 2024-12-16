@@ -1,0 +1,26 @@
+<div class="instrument-list-container">
+    <h1 class="text-center">Financial Instruments</h1>
+  
+    <!-- البحث والتصفية -->
+    <div class="filters">
+      <input
+        type="text"
+        placeholder="Search by name..."
+        [(ngModel)]="searchQuery"
+        (input)="onSearch()"
+      />
+      <select [(ngModel)]="selectedCategory" (change)="filterByCategory()">
+        <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+      </select>
+    </div>
+  
+    <!-- عرض الأدوات المالية -->
+    <div class="instruments-grid">
+      <div *ngFor="let instrument of filteredInstruments" class="instrument-card">
+        <h3>{{ instrument.name }}</h3>
+        <p><strong>Type:</strong> {{ instrument.type }}</p>
+        <p><strong>Symbol:</strong> {{ instrument.symbol }}</p>
+      </div>
+    </div>
+  </div>
+  
