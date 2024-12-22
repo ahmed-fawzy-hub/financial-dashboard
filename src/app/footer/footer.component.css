@@ -1,55 +1,32 @@
-.footer {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
-    font-size: 0.9rem;
-  }
-  
-  .footer-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .footer h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
-  
-  .footer a {
-    color: #ffdd57;
-    text-decoration: none;
-  }
-  
-  .footer a:hover {
-    color: #ffbb33;
-  }
-  
-  .social-media ul,
-  .footer-links ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .social-media li,
-  .footer-links li {
-    margin: 5px 0;
-  }
-  
-  .footer-bottom {
-    text-align: center;
-    font-size: 0.8rem;
-    border-top: 1px solid #444;
-    padding-top: 10px;
-  }
-  
-  /* استجابة الجوال */
-  @media (max-width: 768px) {
-    .footer-content {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-  
+.footer a {
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s;
+}
+
+.footer a:hover {
+  color: #ffc107;
+  transform: scale(1.1);
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer .social-media a {
+  font-size: 1.5rem;
+}
+
+.footer .social-media a:hover {
+  color: #17a2b8; /* لون مميز للأيقونات */
+}
+
+.footer h5 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.footer p {
+  font-size: 0.875rem;
+}

@@ -1,76 +1,25 @@
-/* إعدادات عامة */
-.header {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-  }
-  
-  .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .logo a {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
-  }
-  
-  .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-  }
-  
-  .nav-links li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s;
-  }
-  
-  .nav-links li a:hover,
-  .nav-links li a.active {
-    color: #ffdd57;
-  }
-  
-  /* تصميم الجوال */
-  .menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-  }
-  
-  .menu-toggle span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: white;
-  }
-  
-  .nav-links.active {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    position: absolute;
-    top: 50px;
-    right: 20px;
-    background-color: #007bff;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
-  /* استجابة الجوال */
-  @media (max-width: 768px) {
-    .nav-links {
-      display: none;
-    }
-  
-    .menu-toggle {
-      display: flex;
-    }
-  }
-  
+تخصيص لون النص والخط
+.navbar-brand {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.nav-link {
+  font-size: 1rem;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ffc107; /* لون ذهبي عند التمرير أو التفعيل */
+}
+
+/* تخصيص زر القائمة المنسدلة */
+.navbar-toggler {
+  border-color: #ffffff;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}

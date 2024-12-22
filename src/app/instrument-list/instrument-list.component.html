@@ -1,26 +1,58 @@
-<div class="instrument-list-container">
-    <h1 class="text-center">Financial Instruments</h1>
-  
-    <!-- البحث والتصفية -->
-    <div class="filters">
-      <input
-        type="text"
-        placeholder="Search by name..."
-        [(ngModel)]="searchQuery"
-        (input)="onSearch()"
-      />
-      <select [(ngModel)]="selectedCategory" (change)="filterByCategory()">
-        <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
-      </select>
+<!-- <div class="container mt-5">
+  <h1 class="text-center mb-4">Financial Instruments</h1>
+  <cdk-virtual-scroll-viewport
+    items="instruments"
+    class="virtual-scroller"
+    [style.height]="'500px'"
+  >
+    <div *ngFor="let instrument of instruments" class="card shadow-sm mb-3">
+      <div class="card-body">
+        <h5 class="card-title">{{ instrument.name }}</h5>
+        <p class="card-text">
+          <strong>Type:</strong> {{ instrument.type }} <br />
+          <strong>Symbol:</strong> {{ instrument.symbol }}
+        </p>
+        <a [routerLink]="['/details', instrument.symbol]" class="btn btn-primary btn-sm">
+          View Details
+        </a>
+      </div>
     </div>
-  
-    <!-- عرض الأدوات المالية -->
-    <div class="instruments-grid">
-      <div *ngFor="let instrument of filteredInstruments" class="instrument-card">
-        <h3>{{ instrument.name }}</h3>
-        <p><strong>Type:</strong> {{ instrument.type }}</p>
-        <p><strong>Symbol:</strong> {{ instrument.symbol }}</p>
+  </cdk-virtual-scroll-viewport>
+</div> -->
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Financial Instruments</h1>
+
+  <div class="mb-3">
+    <input
+      type="text"
+      [(ngModel)]="searchQuery"
+      class="form-control"
+      placeholder="Search..."
+      (input)="onSearch()"
+    />
+    <select [(ngModel)]="selectedCategory" class="form-select mt-2" (change)="filterByCategory()">
+      <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+    </select>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let instrument of filteredInstruments">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">{{ instrument.name }}</h5>
+          <p>
+            <strong>Type:</strong> {{ instrument.type }} <br />
+            <strong>Symbol:</strong> {{ instrument.symbol }}
+          </p>
+          <a [routerLink]="['/details', instrument.symbol]" class="btn btn-primary btn-sm">
+            View Details
+          </a>
+        </div>
       </div>
     </div>
   </div>
-  
+
+  <div class="text-center mt-4">
+    <button class="btn btn-danger" (click)="clearCache()">Clear Cache</button>
+  </div>
+</div>

@@ -1,17 +1,35 @@
 .details-container {
-    padding: 20px;
-  }
-  
-  .chart-container {
-    margin-top: 30px;
-  }
-  
-  h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-  }
-  
-  p {
-    margin: 5px 0;
-  }
-  
+  max-width: 800px;
+  margin: auto;
+}
+
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.card-text {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.chart-container {
+  border-radius: 10px;
+  background-color: #f8f9fa;
+}
+
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+.text-danger {
+  font-size: 1.2rem;
+  font-weight: bold;
+}

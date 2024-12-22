@@ -1,18 +1,28 @@
+import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [RouterModule,NgFor],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  categories = [
-    { name: 'Stocks', icon: '📈', route: '/stocks' },
-    { name: 'Cryptocurrency', icon: '💰', route: '/cryptocurrency' },
-    { name: 'ETFs', icon: '📊', route: '/etfs' },
-    { name: 'Funds', icon: '🏦', route: '/funds' },
-    { name: 'Indexes', icon: '📉', route: '/indexes' },
-    { name: 'Commodities', icon: '⚙️', route: '/commodities' }
-  ];
+  instruments: any[] = [];
+
+  constructor(private dataService: DataService) {}
+
+  ngOnInit(): void {
+    this.dataService.getMetadata().subscribe({
+      next: (data) => {
+        this.instruments = data.hits.hits.map((hit: any) => hit._source);
+        console.log('Instruments loaded:', this.instruments);
+      },
+      error: (err) => {
+        console.error('Error loading instruments:', err);
+      },
+    });
+  }
 }

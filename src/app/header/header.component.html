@@ -1,22 +1,63 @@
 <header class="header">
-    <nav class="navbar">
-      <div class="logo">
-        <a routerLink="/">Financial Dashboard</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+    <div class="container">
+      <!-- شعار الموقع -->
+      <a class="navbar-brand fw-bold" [routerLink]="'/'">Financial Dashboard</a>
+
+      <!-- زر القائمة المنسدلة للشاشات الصغيرة -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- الروابط -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <!-- رابط الصفحة الرئيسية -->
+          <li class="nav-item">
+            <a class="nav-link active" [routerLink]="'/'">Home</a>
+          </li>
+
+          <!-- قائمة منسدلة -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Financial Data
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <a class="dropdown-item" [routerLink]="'/stocks'">Stocks</a>
+              </li>
+              <li>
+                <a class="dropdown-item" [routerLink]="'/etfs'">ETFs</a>
+              </li>
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <a class="dropdown-item" [routerLink]="'/about'">About</a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- رابط المساعدة -->
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'/help'">Help</a>
+          </li>
+        </ul>
       </div>
-  
-      <!-- روابط التنقل -->
-      <ul class="nav-links" [class.active]="isMenuOpen">
-        <li><a routerLink="/" routerLinkActive="active">Home</a></li>
-        <li><a routerLink="/instruments" routerLinkActive="active">Instruments</a></li>
-        <li><a routerLink="/about" routerLinkActive="active">About</a></li>
-      </ul>
-  
-      <!-- زر القائمة (للجوال) -->
-      <div class="menu-toggle" (click)="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </nav>
-  </header>
-  
+    </div>
+  </nav>
+</header>
+

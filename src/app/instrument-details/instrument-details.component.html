@@ -1,11 +1,31 @@
-<div class="details-container">
-    <h1>{{ instrument?.name }}</h1>
-    <p><strong>Type:</strong> {{ instrument?.type }}</p>
-    <p><strong>Symbol:</strong> {{ instrument?.symbol }}</p>
-    <p><strong>Currency:</strong> {{ instrument?.currency }}</p>
-  
-    <div class="chart-container" *ngIf="chartData.length">
-      <h2>Price Trends</h2>
+<div class="details-container container mt-5">
+  <!-- حالة عدم العثور على الأداة -->
+  <div *ngIf="!instrument" class="text-center text-danger">
+    <p><strong>Instrument not found.</strong></p>
+  </div>
+
+  <!-- عرض تفاصيل الأداة -->
+  <div *ngIf="instrument" class="card shadow-lg">
+    <div class="card-header bg-primary text-white">
+      <h1 class="card-title text-center">{{ instrument.name }}</h1>
+    </div>
+    <div class="card-body">
+      <p class="card-text">
+        <strong>Type:</strong> {{ instrument.type }}
+      </p>
+      <p class="card-text">
+        <strong>Symbol:</strong> {{ instrument.symbol }}
+      </p>
+      <p class="card-text">
+        <strong>Currency:</strong> {{ instrument.currency }}
+      </p>
+    </div>
+  </div>
+
+  <!-- عرض الرسم البياني -->
+  <div *ngIf="chartData.length" class="mt-5">
+    <h3 class="text-center mb-4">Price Trends</h3>
+    <div class="chart-container card shadow-sm p-3">
       <canvas baseChart
         [datasets]="chartData"
         [labels]="chartLabels"
@@ -14,8 +34,8 @@
           scales: { y: { beginAtZero: true } },
           plugins: { legend: { display: true } }
         }"
-        [chartType]="'line'">
+        [type]="'line'">
       </canvas>
     </div>
   </div>
-  
+</div>
