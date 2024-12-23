@@ -1,59 +1,48 @@
-# FinancialDashboard
+# Financial Dashboard
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.5.
+## Project Overview
+A web application built using Angular to display financial instruments with features like lazy loading, caching, and state management (NgRx).
 
-## Development server
+## Features
+- Display financial instruments (Stocks, ETFs, Cryptocurrencies, etc.).
+- Lazy loading with pagination.
+- Caching to improve performance.
+- Fully responsive UI/UX.
+- Dockerized setup for easy deployment.
 
-To start a local development server, run:
+## Directory Structure
+<include the directory structure here> ```
+Technologies Used
+Angular
+NgRx (State Management)
+RxJS
+Docker and Docker Compose
+Bootstrap (Styling)
+Nginx (Web Server)
+Setup Instructions
+Clone the repository:
 
-```bash
+bash
+git clone https://github.com/your-username/financial-dashboard.git
+cd financial-dashboard
+Install dependencies:
+
+bash
+npm install
+Run the development server:
+
+bash
 ng serve
-```
+Build the production version:
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+bash
+ng build --prod
+Run the Docker container:
 
-## Code scaffolding
+bash
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+docker-compose up
+Access the app at:
 
-```bash
-ng generate component component-name
-```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+http://localhost:8080

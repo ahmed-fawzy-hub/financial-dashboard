@@ -12,10 +12,10 @@
 
 .nav-link:hover,
 .nav-link.active {
-  color: #ffc107; /* لون ذهبي عند التمرير أو التفعيل */
+  color: #ffc107; 
 }
 
-/* تخصيص زر القائمة المنسدلة */
+
 .navbar-toggler {
   border-color: #ffffff;
 }

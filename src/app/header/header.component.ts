@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  isMenuOpen: boolean = false; // للتحكم في فتح/إغلاق القائمة في الجوال
+  isMenuOpen: boolean = false; 
 
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;

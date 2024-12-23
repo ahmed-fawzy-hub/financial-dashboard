@@ -14,15 +14,14 @@ export class DataService {
 
   getMetadata(): Observable<any> {
     if (this.metadataCache) {
-      // إذا كانت البيانات موجودة في التخزين المؤقت، قم بإرجاعها
+      
       return of(this.metadataCache);
     }
 
-    // إذا لم تكن البيانات في التخزين المؤقت، جلبها من API وتخزينها
     return this.http.get('/data/metadata.json').pipe(
       tap((data) => {
         this.metadataCache = data;
-        this.metadataSubject.next(data); // تحديث المراقب
+        this.metadataSubject.next(data);
       })
     );
   }
@@ -36,14 +35,13 @@ export class DataService {
     this.metadataSubject.next(null);
   }
 
-  // استرجاع البيانات كـ BehaviorSubject
+  
   getMetadataSubject(): BehaviorSubject<any | null> {
     return this.metadataSubject;
   }
   getPagedData(page: number, pageSize: number): Observable<any> {
-    // افترض أن لديك بيانات كبيرة الحجم، وقم بجلب البيانات بالصفحات
+    
     return this.http.get(`data/metadata.json`).pipe(
-      // محاكاة تقسيم البيانات حسب الصفحة
       map((data: any) => {
         const start = (page - 1) * pageSize;
         const end = start + pageSize;

@@ -14,11 +14,11 @@ import { RouterModule } from '@angular/router';
 })
 
 export class InstrumentListComponent {
-  instruments: Instrument[] = [];  // مصفوفة الأدوات المالية
-  filteredInstruments: Instrument[] = [];  // مصفوفة الأدوات بعد التصفية
-  searchQuery: string = '';  // نص البحث
-  selectedCategory: string = 'All';  // الفئة المحددة
-  categories: string[] = ['All', 'Stock', 'Cryptocurrency', 'ETF', 'Fund', 'Index', 'Commodity'];  // الفئات المتاحة
+  instruments: Instrument[] = [];  
+  filteredInstruments: Instrument[] = [];  
+  searchQuery: string = '';  
+  selectedCategory: string = 'All';  
+  categories: string[] = ['All', 'Stock', 'Cryptocurrency', 'ETF', 'Fund', 'Index', 'Commodity']; 
   currentPage: number = 1;
   pageSize: number = 10;
   totalItems: number = 0;
@@ -26,10 +26,9 @@ export class InstrumentListComponent {
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
-    // تحميل بيانات metadata من خدمة DataService
     this.dataService.getMetadata().subscribe((data) => {
-      this.instruments = data.hits.hits.map((hit: any) => hit._source);  // تحويل البيانات إلى مصفوفة الأدوات
-      this.filteredInstruments = [...this.instruments];  // نسخ الأدوات المالية للتمكن من تصفيتها
+      this.instruments = data.hits.hits.map((hit: any) => hit._source);  
+      this.filteredInstruments = [...this.instruments];  
       
     });
   }
